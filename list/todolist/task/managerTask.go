@@ -36,10 +36,26 @@ func (managerTask *ManagerTask) add() {
 	task, _ := reader.ReadString('\n')
 	task = strings.TrimSpace(task)
 
-	nTask := newTask(managerTask.id, task)
+	nTask := newTask(len(managerTask.listTask)+1, task)
 	managerTask.listTask = append(managerTask.listTask, nTask)
 	managerTask.id++
 	fmt.Println("Успех!")
+}
+
+func (managerTask *ManagerTask) delete() {
+	var id int
+	fmt.Scan(&id)
+
+	if id < 1 || id > len(managerTask.listTask) {
+		fmt.Println("Такой задачи не существует!")
+		return
+	}
+
+	managerTask.listTask = slices.Delete(managerTask.listTask, id-1, id)
+	managerTask.id--
+	fmt.Println("Успех")
+
+	managerTask.reId()
 }
 
 func (managerTask *ManagerTask) done() {
@@ -54,15 +70,8 @@ func (managerTask *ManagerTask) done() {
 	managerTask.listTask[id].do()
 }
 
-func (managerTask *ManagerTask) delete() {
-	var id int
-	fmt.Scan(&id)
-
-	if id > managerTask.id {
-		fmt.Println("Такой задачи не существует!")
-		return
+func (managerTask *ManagerTask) reId() {
+	for i := range managerTask.listTask {
+		managerTask.listTask[i].id = i + 1
 	}
-
-	managerTask.listTask = slices.Delete(managerTask.listTask, id, id+1)
-	fmt.Println("Успех")
 }
