@@ -21,6 +21,11 @@ func newManagerTask() ManagerTask {
 }
 
 func (managerTask *ManagerTask) list() {
+	if len(managerTask.listTask) == 0 {
+		fmt.Println("Задач нет!")
+		return
+	}
+
 	for _, task := range managerTask.listTask {
 
 		if task.done {
@@ -35,6 +40,11 @@ func (managerTask *ManagerTask) add() {
 	reader := bufio.NewReader(os.Stdin)
 	task, _ := reader.ReadString('\n')
 	task = strings.TrimSpace(task)
+
+	if strings.ContainsAny(task, "+-*/=") || task == "" {
+		fmt.Println("Неверный ввод!")
+		return
+	}
 
 	nTask := newTask(len(managerTask.listTask)+1, task)
 	managerTask.listTask = append(managerTask.listTask, nTask)

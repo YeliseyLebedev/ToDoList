@@ -5,7 +5,7 @@ import (
 )
 
 func Show() {
-	fmt.Print("/help - сводка команд\n\n")
+	fmt.Print("help - сводка команд\n\n")
 
 	manager := newManagerTask()
 
