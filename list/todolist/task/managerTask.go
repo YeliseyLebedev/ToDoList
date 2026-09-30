@@ -53,21 +53,22 @@ func (managerTask *ManagerTask) delete() {
 
 	managerTask.listTask = slices.Delete(managerTask.listTask, id-1, id)
 	managerTask.id--
-	fmt.Println("Успех")
 
 	managerTask.reId()
+	fmt.Println("Успех")
 }
 
 func (managerTask *ManagerTask) done() {
 	var id int
 	fmt.Scan(&id)
 
-	if id > managerTask.id {
+	if id < 1 || id > len(managerTask.listTask) {
 		fmt.Println("Такой задачи не существует!")
 		return
 	}
 
-	managerTask.listTask[id].do()
+	managerTask.listTask[id-1].do()
+	fmt.Println("Успех")
 }
 
 func (managerTask *ManagerTask) reId() {

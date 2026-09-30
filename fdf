@@ -1,0 +1,29 @@
+[33mcommit 8a6fe9cc3c25b65b514b7318e023f430648731bf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: YeliseyLebedev <elisej.lebedev.06@bk.ru>
+Date:   Wed Sep 30 16:12:09 2026 +0300
+
+    fix: normal print [ID]
+
+[33mcommit e923a7ae35eda60ff13e443554e6ebba8b2bd81c[m
+Author: YeliseyLebedev <elisej.lebedev.06@bk.ru>
+Date:   Wed Sep 30 15:32:32 2026 +0300
+
+    fix: true v1.0
+
+[33mcommit e7800d2ac2a97902355179643f9f33c2f359cea4[m
+Author: YeliseyLebedev <elisej.lebedev.06@bk.ru>
+Date:   Wed Sep 30 15:29:20 2026 +0300
+
+    fix
+
+[33mcommit 72bdb59a536e89afad2bf839cb3aa003080b14ed[m
+Author: YeliseyLebedev <elisej.lebedev.06@bk.ru>
+Date:   Wed Sep 30 15:20:36 2026 +0300
+
+    First commit, v1.0 program
+
+[33mcommit 7d7bd476c9eeae425d141b0777175f1a8e02b196[m
+Author: YeliseyLebedev <elisej.lebedev.06@bk.ru>
+Date:   Wed Sep 30 14:44:09 2026 +0300
+
+    Initial commit
