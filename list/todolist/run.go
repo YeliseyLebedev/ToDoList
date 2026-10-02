@@ -1,9 +1,9 @@
 package todolist
 
 import (
-	"study/todolist/task"
+	"study/todolist/mainWindow"
 )
 
 func RunToDoList() {
-	task.Show()
+	mainWindow.Show()
 }

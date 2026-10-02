@@ -20,7 +20,23 @@ func newManagerTask() ManagerTask {
 	}
 }
 
-func (managerTask *ManagerTask) list() {
+func (managerTask *ManagerTask) GetListTask() []Task {
+	return managerTask.listTask
+}
+
+func (managerTask *ManagerTask) GetId() int {
+	return managerTask.id
+}
+
+func (managerTask *ManagerTask) SetListTask(newList []Task) {
+	managerTask.listTask = newList
+}
+
+func (managerTask *ManagerTask) SetId(newId int) {
+	managerTask.id = newId
+}
+
+func (managerTask *ManagerTask) List() {
 	if len(managerTask.listTask) == 0 {
 		fmt.Println("Задач нет!")
 		return
@@ -36,7 +52,7 @@ func (managerTask *ManagerTask) list() {
 	}
 }
 
-func (managerTask *ManagerTask) add() {
+func (managerTask *ManagerTask) Add() {
 	reader := bufio.NewReader(os.Stdin)
 	task, _ := reader.ReadString('\n')
 	task = strings.TrimSpace(task)
@@ -52,7 +68,7 @@ func (managerTask *ManagerTask) add() {
 	fmt.Println("Успех!")
 }
 
-func (managerTask *ManagerTask) delete() {
+func (managerTask *ManagerTask) Delete() {
 	var id int
 	fmt.Scan(&id)
 
@@ -68,7 +84,7 @@ func (managerTask *ManagerTask) delete() {
 	fmt.Println("Успех")
 }
 
-func (managerTask *ManagerTask) done() {
+func (managerTask *ManagerTask) Done() {
 	var id int
 	fmt.Scan(&id)
 

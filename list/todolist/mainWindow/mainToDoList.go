@@ -1,13 +1,14 @@
-package task
+package mainWindow
 
 import (
 	"fmt"
+	"study/todolist/story"
 )
 
 func Show() {
 	fmt.Print("help - сводка команд\n\n")
 
-	manager := newManagerTask()
+	manager := story.Download()
 
 	active := true
 
@@ -18,21 +19,22 @@ func Show() {
 
 		switch task {
 		case "add":
-			manager.add()
+			manager.Add()
 
 		case "list":
-			manager.list()
+			manager.List()
 
 		case "done":
-			manager.done()
+			manager.Done()
 
 		case "delete":
-			manager.delete()
+			manager.Delete()
 
 		case "help":
 			help()
 
 		case "exit":
+			story.Save(manager)
 			active = false
 
 		default:

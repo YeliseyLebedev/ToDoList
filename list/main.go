@@ -1,9 +1,9 @@
 package main
 
 import (
-	"study/todolist/task"
+	"study/todolist"
 )
 
 func main() {
-	task.Show()
+	todolist.RunToDoList()
 }
